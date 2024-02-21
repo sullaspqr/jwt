@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
+  const [data, setData] = useState('');
+
+return (
+  <div>
+    <h1>Bejelentkezés</h1>
+    Felhasználónév: <input
+      type="text"
+      placeholder="felhasználónév"
+      value={username}
+      onChange={(e) => setUsername(e.target.value)} /><br />
+    Jelszó: <input
+      type="password"
+      placeholder="jelszó"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)} />
+    <button
+      onClick={handleLogin}>Bejelentkezés</button>
+  </div>
+);
 }
 
 export default App;

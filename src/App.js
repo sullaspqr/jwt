@@ -18,7 +18,7 @@ function App() {
   };
   const fetchData = async() => {
     try { 
-      const response = await axios.post('https://jwt.sulla.hu/termekek', {
+      const response = await axios.get('https://jwt.sulla.hu/termekek', {
       headers: {
         Authorization: `Bearer ${token}`
       }

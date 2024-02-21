@@ -23,8 +23,21 @@ return (
       onChange={(e) => setPassword(e.target.value)} />
     <button
       onClick={handleLogin}>Bejelentkezés</button>
+  {token &&(
+    <div>
+      <h2>Védett végpont</h2>
+      <button onClick={fetchData}>Végpont lekerdezés</button>
+      {data && (
+        <ul> 
+        { data.map((item) => (
+        <li key={item.id}>{item.name} - {item.price}</li>
+      ))}
+      </ul>
+      )} 
+    </div>
+  )}
   </div>
-);
+  );
 }
 
 export default App;
